@@ -6,11 +6,11 @@ Digest authentication will be added soon, stay tuned!
 
 ## Installation
 
-* From Git repository
- ```
- 1. git clone https://github.com/nopped/django-http-auth.git
- 2. python setup.py install
- ```
+From Git repository
+```
+1. git clone https://github.com/nopped/django-http-auth.git
+2. python setup.py install
+```
 
 ## Usage
 
@@ -21,8 +21,9 @@ Authentication can be applied by middleware, to protect all project's URLs, or a
  You can protect all URLs with authentication mechanism by adding django_http_auth to MIDDLEWARE_CLASSES in your Django settings file:
  
  * Basic Authentication
- ```python
-MIDDLEWARE_CLASSES = (
+   
+   ```python
+   MIDDLEWARE_CLASSES = (
 	#...
     'django_http_auth.middleware.HttpBasicAuthMiddleware',
 )
