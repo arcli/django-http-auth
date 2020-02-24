@@ -22,8 +22,12 @@ class HTTPBasicAuthenticator(object):
     @staticmethod
     def check(request):
         # Check if user already authenticated, if so, skip HTTP Basic authentication
-        if request.user.is_authenticated():
-            return True
+        try:
+            if request.user.is_authenticated():
+                return True
+        except TypeError:
+            if request.user.is_authenticated:
+                return True
 
         # Perform anti-brute force process
         if HTTPBasicAuthenticator._anti_bruteforce(request):

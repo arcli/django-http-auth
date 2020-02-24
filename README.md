@@ -91,3 +91,4 @@ Authentication can be applied by middleware, to protect all project's URLs, or a
 Tested with:
 
 * Django 1.6.x
+* Django 2.2.x
