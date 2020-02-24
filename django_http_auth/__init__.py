@@ -38,7 +38,7 @@ class HTTPBasicAuthenticator(object):
             # Extract authentication type and credentials from header
             auth_type, credentials_base64 = request.META['HTTP_AUTHORIZATION'].split(' ')
             # Decode credentials using Base64
-            credentials = base64.b64decode(credentials_base64)
+            credentials = base64.b64decode(credentials_base64).decode("utf-8")
             # Get username and password from decoded credentials
             username, password = credentials.split(':')
             # Try to authenticate username and password to allow access
